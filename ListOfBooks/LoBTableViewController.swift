@@ -24,7 +24,13 @@ class LoBTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = books[indexPath.row]
+        let currentBook = books[indexPath.row]
+        cell.textLabel?.text = currentBook["name"] as? String
+        if (currentBook["done"] as? Bool) == true {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
 
@@ -39,6 +45,15 @@ class LoBTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             
         }    
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if changeStatus(at: indexPath.row) {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        } else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        }
     }
 
     /*
