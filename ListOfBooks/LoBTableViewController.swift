@@ -82,7 +82,16 @@ class LoBTableViewController: UITableViewController {
     */
 
     @IBAction func addButton(_ sender: UIBarButtonItem) {
-        addBook(at: "Voina i mir")
-        tableView.reloadData()
+        let alert = UIAlertController(title: "Что прочтем?", message: nil, preferredStyle: .alert)
+        alert.addTextField()
+        alert.textFields?.first?.placeholder = "Название книги"
+        let okAction = UIAlertAction(title: "Добавить", style: .cancel) { action in
+            addBook(at: (alert.textFields?.first?.text)!)
+            self.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
 }
