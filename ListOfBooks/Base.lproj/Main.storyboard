@@ -16,13 +16,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="Cell" id="d4a-I0-fFf">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="Cell" id="d4a-I0-fFf" customClass="CustomTableViewCell" customModule="ListOfBooks" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="40.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d4a-I0-fFf" id="VBi-3s-tmZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="373.5" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="373.5" height="40.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vei-xV-FsY">
+                                            <rect key="frame" x="13" y="0.0" width="40" height="40.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="57f-Lj-rAh"/>
+                                                <constraint firstAttribute="width" constant="40" id="egb-JN-n4I"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayZ-Kn-OLo">
+                                            <rect key="frame" x="61" y="12" width="296.5" height="16.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ayZ-Kn-OLo" secondAttribute="trailing" constant="8" id="10E-KJ-uZS"/>
+                                        <constraint firstItem="ayZ-Kn-OLo" firstAttribute="top" secondItem="VBi-3s-tmZ" secondAttribute="topMargin" constant="1" id="Bmm-Lx-gVx"/>
+                                        <constraint firstAttribute="bottom" secondItem="vei-xV-FsY" secondAttribute="bottom" id="KCu-LI-tAU"/>
+                                        <constraint firstItem="ayZ-Kn-OLo" firstAttribute="leading" secondItem="vei-xV-FsY" secondAttribute="trailing" constant="8" id="SMs-Y9-DTb"/>
+                                        <constraint firstItem="vei-xV-FsY" firstAttribute="leading" secondItem="VBi-3s-tmZ" secondAttribute="leading" constant="13" id="Xud-hy-NNy"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ayZ-Kn-OLo" secondAttribute="bottom" constant="1" id="Z8S-DQ-VcY"/>
+                                        <constraint firstItem="vei-xV-FsY" firstAttribute="top" secondItem="VBi-3s-tmZ" secondAttribute="top" id="lwt-Wb-RDi"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageBook" destination="vei-xV-FsY" id="QGn-Ef-qUx"/>
+                                    <outlet property="nameBook" destination="ayZ-Kn-OLo" id="RLE-r1-42D"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -31,16 +59,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Почитай старших 📚" id="ezV-Sf-26Z">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kgq-lS-7Wj">
-                            <connections>
-                                <action selector="addButton:" destination="7kj-mG-Ph0" id="usv-S3-omI"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Kgq-lS-7Wj">
+                                <connections>
+                                    <action selector="addButton:" destination="7kj-mG-Ph0" id="usv-S3-omI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="lOk-Ck-tm2">
+                                <connections>
+                                    <action selector="editButton:" destination="7kj-mG-Ph0" id="Nf7-9b-Agv"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGq-7k-IqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="98"/>
+            <point key="canvasLocation" x="821.73913043478262" y="97.767857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Kz-Fa-7Tu">

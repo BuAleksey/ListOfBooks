@@ -9,9 +9,11 @@ import UIKit
 
 class LoBTableViewController: UITableViewController {
 
+    @IBOutlet weak var bookImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -24,12 +26,14 @@ class LoBTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let customCell = cell as! CustomTableViewCell
         let currentBook = books[indexPath.row]
-        cell.textLabel?.text = currentBook["name"] as? String
+        customCell.nameBook.text = currentBook["name"] as? String
+        customCell.imageBook.image = UIImage(named: "blueBook")
         if (currentBook["done"] as? Bool) == true {
-            cell.accessoryType = .checkmark
+            customCell.accessoryType = .checkmark
         } else {
-            cell.accessoryType = .none
+            customCell.accessoryType = .none
         }
         return cell
     }
@@ -56,12 +60,10 @@ class LoBTableViewController: UITableViewController {
         }
     }
 
-    /*
-    // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
+        moveBook(fromIndex: fromIndexPath.row, toIndex: to.row)
+        tableView.reloadData()
+        }
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -93,5 +95,9 @@ class LoBTableViewController: UITableViewController {
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         present(alert, animated: true)
+    }
+    
+    @IBAction func editButton(_ sender: UIBarButtonItem) {
+        tableView.setEditing(!tableView.isEditing, animated: true)
     }
 }

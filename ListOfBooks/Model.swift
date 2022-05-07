@@ -30,6 +30,12 @@ func removeBook(at index: Int) {
     books.remove(at: index)
 }
 
+func moveBook(fromIndex: Int, toIndex: Int) {
+    let from = books[fromIndex]
+    books.remove(at: fromIndex)
+    books.insert(from, at: toIndex)
+}
+
 func changeStatus(at index: Int) -> Bool {
     books[index]["done"] = !(books[index]["done"] as! Bool)
     return books[index]["done"] as! Bool

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87DDE3DF282700CB003A5626 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDE3DE282700CB003A5626 /* CustomTableViewCell.swift */; };
 		87EF1FF428244F8200380657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EF1FF328244F8200380657 /* AppDelegate.swift */; };
 		87EF1FF628244F8200380657 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EF1FF528244F8200380657 /* SceneDelegate.swift */; };
 		87EF1FFB28244F8200380657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87EF1FF928244F8200380657 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87DDE3DE282700CB003A5626 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		87EF1FF028244F8200380657 /* ListOfBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListOfBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87EF1FF328244F8200380657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87EF1FF528244F8200380657 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				87EF1FF328244F8200380657 /* AppDelegate.swift */,
 				87EF1FF528244F8200380657 /* SceneDelegate.swift */,
 				87EF20072824502100380657 /* LoBTableViewController.swift */,
+				87DDE3DE282700CB003A5626 /* CustomTableViewCell.swift */,
 				87EF20092824505700380657 /* Model.swift */,
 				87EF1FF928244F8200380657 /* Main.storyboard */,
 				87EF1FFC28244F8300380657 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87EF20082824502100380657 /* LoBTableViewController.swift in Sources */,
+				87DDE3DF282700CB003A5626 /* CustomTableViewCell.swift in Sources */,
 				87EF1FF428244F8200380657 /* AppDelegate.swift in Sources */,
 				87EF1FF628244F8200380657 /* SceneDelegate.swift in Sources */,
 				87EF200A2824505700380657 /* Model.swift in Sources */,
